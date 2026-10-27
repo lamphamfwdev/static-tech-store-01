@@ -1,0 +1,21 @@
+{
+  "name": "webshop100",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Giao diện catalog LAM SHOP theo mockup; chạy local không cần cài package.",
+  "scripts": {
+    "start": "node scripts/local-server.cjs --open",
+    "build": "node scripts/build-static.cjs",
+    "build:demo": "node scripts/build-static.cjs --demo",
+    "test:server": "node tests/server.test.cjs",
+    "test:core": "node tests/core.test.cjs",
+    "test:backend": "node apps-script/test-backend.cjs",
+    "test": "node tests/core.test.cjs && node tests/server.test.cjs && node apps-script/test-backend.cjs && node tests/share.test.cjs && node tests/contact-bar.test.cjs && node tests/gallery.test.cjs",
+    "test:share": "node tests/share.test.cjs",
+    "test:contact": "node tests/contact-bar.test.cjs",
+    "test:gallery": "node tests/gallery.test.cjs"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

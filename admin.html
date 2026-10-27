@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f8c72f">
+  <title>Quản trị cửa hàng · WebShop100</title>
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="index.html" id="brand-home"><span class="brand-symbol" aria-hidden="true">W<span>↗</span></span><span>SHOP STUDIO<small>Không gian quản trị</small></span></a>
+      <div class="sidebar-section-label">CỬA HÀNG CỦA BẠN</div>
+      <nav class="admin-nav" aria-label="Quản trị cửa hàng">
+        <button class="nav-button active" data-view="products"><span aria-hidden="true">▦</span>Sản phẩm<span id="nav-count" class="nav-count">0</span></button>
+        <button class="nav-button" data-view="settings"><span aria-hidden="true">◈</span>Nội dung shop</button>
+        <button class="nav-button" data-view="prices"><span aria-hidden="true">≋</span>Bộ lọc giá</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="index.html" id="open-shop" class="sidebar-link" target="_blank" rel="noopener">↗ Xem cửa hàng</a>
+        <a href="#" id="open-sheet" class="sidebar-link" target="_blank" rel="noopener" hidden>▤ Mở Google Sheets</a>
+        <div class="sidebar-user"><span class="user-avatar">S</span><span>Quản trị viên<small id="admin-email">Chế độ dùng thử tại máy</small></span></div>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-topbar"><div><span class="overline">SHOP STUDIO</span><span class="breadcrumb" id="breadcrumb">/ Sản phẩm</span></div><span class="mode-chip" id="mode-chip"><i></i> Bản local</span></header>
+      <div class="workspace">
+        <div id="mode-notice" class="notice"><span aria-hidden="true">ⓘ</span><p>Đang tải dữ liệu quản trị…</p></div>
+        <div id="fatal-error" class="notice error" role="alert" hidden></div>
+        <section id="products-view" class="view-panel">
+          <div class="page-heading"><div><p class="eyebrow">QUẢN LÝ CỬA HÀNG</p><h1>Sản phẩm<span class="title-dot">.</span></h1><p class="page-description">Mọi sản phẩm. Một nơi quản lý.</p></div><button class="btn btn-primary" id="add-product"><span aria-hidden="true">＋</span>Thêm sản phẩm</button></div>
+          <div class="stat-grid">
+            <article class="stat-card"><span class="stat-label">Tổng sản phẩm</span><strong id="stat-total">—</strong><span class="stat-hint">Trong danh mục cửa hàng</span><span class="stat-icon" aria-hidden="true">▦</span></article>
+            <article class="stat-card"><span class="stat-label">Đang hiển thị</span><strong id="stat-visible">—</strong><span class="stat-hint"><i class="status-dot green"></i>Khách hàng có thể xem</span><span class="stat-icon" aria-hidden="true">◉</span></article>
+            <article class="stat-card"><span class="stat-label">Đang tạm ẩn</span><strong id="stat-hidden">—</strong><span class="stat-hint">Bao gồm sản phẩm nháp</span><span class="stat-icon" aria-hidden="true">◌</span></article>
+          </div>
+          <div class="content-card">
+            <div class="table-toolbar"><div class="search-field"><span aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Tìm mã, tên hoặc danh mục…" aria-label="Tìm sản phẩm"></div><label class="archive-toggle"><input type="checkbox" id="show-archived"> Đã lưu trữ</label><button class="btn btn-light btn-sm" id="reload-data">↻ Tải lại</button></div>
+            <div class="table-scroll"><table class="product-table"><thead><tr><th>SẢN PHẨM</th><th>DANH MỤC</th><th>GIÁ BÁN</th><th>TRẠNG THÁI</th><th>CẬP NHẬT</th><th><span class="sr-only">Thao tác</span></th></tr></thead><tbody id="product-rows"></tbody></table></div>
+            <div id="product-empty" class="empty-state" hidden><span aria-hidden="true">▧</span><h3>Chưa có sản phẩm phù hợp</h3><p>Thử từ khóa khác hoặc thêm sản phẩm đầu tiên.</p></div>
+            <div class="table-footer"><span id="product-result-count">Đang tải…</span><div class="pagination" id="admin-pagination" aria-label="Phân trang sản phẩm"></div></div>
+          </div>
+          <div class="data-tools"><button class="text-button" id="export-json">↓ Xuất dữ liệu JSON</button><button class="text-button" id="import-json">↑ Nhập dữ liệu JSON</button><button class="text-button" id="export-js">↓ Xuất data.js cho website</button><span id="data-tools-help">Sao lưu dữ liệu hoặc đưa dữ liệu vào bản website.</span></div>
+          <input type="file" id="import-file" accept="application/json,.json" hidden>
+        </section>
+        <section id="settings-view" class="view-panel" hidden>
+          <div class="page-heading"><div><p class="eyebrow">NHẬN DIỆN & NỘI DUNG</p><h1>Nội dung shop<span class="title-dot">.</span></h1><p class="page-description">Kể câu chuyện của cửa hàng theo cách của bạn.</p></div><button class="btn btn-primary" form="settings-form" type="submit">Lưu thay đổi</button></div>
+          <form id="settings-form" class="settings-layout">
+            <div class="settings-main">
+              <section class="form-card"><h2>Nhận diện thương hiệu</h2><p class="section-hint">Thông tin xuất hiện trên đầu trang và trình duyệt.</p><div class="form-grid">
+                <label>Tên shop <span class="required">*</span><input name="name" required maxlength="100"></label><label>Slogan<input name="slogan" maxlength="200"></label>
+                <label class="span-2">Logo<div class="image-url-field"><input name="logo" placeholder="https://… hoặc assets/images/logo.svg"><button class="btn btn-light" type="button" data-settings-image="logo">Chọn ảnh</button></div><small>PNG có nền trong suốt được giữ nguyên khi dán URL; ảnh tải mới được cắt vuông.</small></label>
+                <label class="span-2">Tiêu đề tab trình duyệt<input name="seoTitle" maxlength="200"></label><label class="span-2">Mô tả tìm kiếm<textarea name="seoDescription" rows="3" maxlength="500"></textarea></label>
+              </div></section>
+              <section class="form-card"><h2>Khu vực đầu trang</h2><p class="section-hint">Nội dung giới thiệu lớn và ảnh nổi bật trên trang chủ.</p><div class="form-grid">
+                <label class="span-2">Nhãn nhỏ<input name="heroEyebrow" maxlength="200"></label><label class="span-2">Tiêu đề lớn<textarea name="heroTitle" rows="2" maxlength="200"></textarea><small>Xuống dòng để chia tiêu đề theo ý muốn.</small></label><label class="span-2">Mô tả<textarea name="heroDescription" rows="3" maxlength="1000"></textarea></label>
+                <label>Nhãn nổi bật<input name="heroBadge" maxlength="150"></label><label>Nội dung nổi bật<input name="heroHighlight" maxlength="200"></label><label>Tên sản phẩm ở hero<input name="heroProductName" maxlength="100"></label><label>Mô tả sản phẩm ở hero<input name="heroProductDescription" maxlength="300"></label>
+                <label class="span-2">Ảnh hero<div class="image-url-field"><input name="heroImage" placeholder="https://… hoặc assets/images/hero-tech.jpg"><button class="btn btn-light" type="button" data-settings-image="heroImage">Chọn ảnh</button></div><small>Ảnh tải mới được cắt theo tỷ lệ 16:9, xuất 1920 × 1080 px.</small></label>
+              </div></section>
+              <section class="form-card"><h2>Thông tin liên hệ</h2><div class="form-grid"><label class="span-2">Giới thiệu ngắn<textarea name="about" rows="3" maxlength="2000"></textarea></label><label class="span-2">Địa chỉ<input name="address" maxlength="300"></label><label>Điện thoại<input name="phone" type="tel" maxlength="50"></label><label>Email<input name="email" type="email" maxlength="200"></label><label>Tên Fanpage<input name="fanpageName" maxlength="150"></label><label>Username Fanpage<input name="fanpageUsername" maxlength="150"></label></div></section>
+            </div>
+            <div class="settings-aside">
+              <section class="form-card"><h2>Hiển thị</h2><label>Số sản phẩm mỗi trang<input name="pageSize" type="number" required min="1" max="100" step="1"></label><p class="section-hint">Bản giao diện mẫu sử dụng 5 sản phẩm mỗi trang.</p></section>
+              <section class="form-card"><h2>Kênh nhận đơn</h2><p class="section-hint">Khách sao chép đơn và tự gửi qua kênh được chọn.</p><label>Kênh mặc định<select name="contactChannel"><option value="messenger">Facebook Messenger</option><option value="instagram">Instagram</option><option value="zalo">Zalo cá nhân</option><option value="zaloOA">Zalo OA</option><option value="tiktok">TikTok</option></select></label><label>URL Messenger<input name="channel_messenger" type="url" placeholder="https://m.me/tenfanpage"></label><label>URL Instagram<input name="channel_instagram" type="url" placeholder="https://www.instagram.com/ten"></label><label>URL Zalo cá nhân<input name="channel_zalo" type="url" placeholder="https://zalo.me/84900000000"></label><label>URL Zalo OA<input name="channel_zaloOA" type="url" placeholder="https://zalo.me/…"></label><label>URL TikTok<input name="channel_tiktok" type="url" placeholder="https://www.tiktok.com/@ten"></label></section>
+              <section class="tip-card"><span aria-hidden="true">✦</span><h3>Cập nhật thật đơn giản</h3><p>Nội dung đã lưu sẽ xuất hiện sau khi tải lại trang cửa hàng. Với Google Sheets, API có thể lưu đệm tối đa khoảng 30 giây.</p></section>
+            </div>
+          </form>
+        </section>
+        <section id="prices-view" class="view-panel" hidden>
+          <div class="page-heading"><div><p class="eyebrow">BỘ LỌC DANH MỤC</p><h1>Khoảng giá<span class="title-dot">.</span></h1><p class="page-description">Giúp khách tìm được sản phẩm trong ngân sách.</p></div><button class="btn btn-primary" id="add-price">＋ Thêm khoảng giá</button></div>
+          <div class="content-card"><div class="table-scroll"><table class="price-table"><thead><tr><th>TÊN HIỂN THỊ</th><th>GIÁ TỪ (₫)</th><th>GIÁ ĐẾN (₫)</th><th>THỨ TỰ</th><th>HIỂN THỊ</th><th><span class="sr-only">Xóa</span></th></tr></thead><tbody id="price-rows"></tbody></table></div><div id="prices-empty" class="empty-state" hidden><h3>Chưa có khoảng giá</h3><p>Thêm khoảng giá đầu tiên để khách lọc sản phẩm.</p></div><div class="table-footer"><span>Để trống “Giá đến” nếu không giới hạn giá tối đa.</span><button class="btn btn-primary" id="save-prices">Lưu bộ lọc giá</button></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <dialog id="product-dialog" class="admin-dialog product-dialog" aria-labelledby="product-dialog-title">
+    <form id="product-form"><div class="dialog-header"><div><p class="eyebrow">DANH MỤC CỬA HÀNG</p><h2 id="product-dialog-title">Thêm sản phẩm</h2></div><button class="icon-button" type="button" data-close-dialog="product-dialog" aria-label="Đóng">×</button></div>
+      <div class="dialog-body"><div class="form-grid"><label>Mã sản phẩm <span class="required">*</span><input name="code" required maxlength="60" placeholder="VD: LAP-001"></label><label>Danh mục<input name="category" maxlength="100" list="category-options" placeholder="VD: Laptop"></label><label class="span-2">Tên sản phẩm <span class="required">*</span><input name="name" required maxlength="200"></label><label>Giá bán (₫) <span class="required">*</span><input name="price" type="number" required min="0" step="1"></label><label>Giá gốc (₫)<input name="originalPrice" type="number" min="0" step="1" placeholder="Để trống nếu không giảm giá"></label><label class="span-2">Mô tả ngắn<textarea name="shortDescription" rows="2" maxlength="500"></textarea></label><label class="span-2">Mô tả chi tiết<textarea name="description" rows="5" maxlength="10000"></textarea></label><label class="span-2">Thẻ sản phẩm<input name="tags" maxlength="1000" placeholder="USB-C, Sạc nhanh, Chính hãng"><small>Ngăn cách các thẻ bằng dấu phẩy.</small></label><label>Trạng thái<select name="status"><option value="active">Đang bán</option><option value="out_of_stock">Hết hàng</option><option value="draft">Bản nháp</option></select></label><label>Tồn kho<input name="stock" type="number" min="0" step="1" placeholder="Để trống nếu không theo dõi"></label><label class="check-field"><input name="visible" type="checkbox"> Hiển thị trên cửa hàng</label><label class="check-field"><input name="featured" type="checkbox"> Đánh dấu nổi bật</label></div>
+        <section class="product-images-section"><div class="section-heading"><h3>Ảnh sản phẩm</h3><span id="product-image-count" role="status">0/4 ảnh · 1 ảnh đại diện + 3 ảnh phụ</span></div><div class="image-slots" id="image-slots"></div><p class="section-hint">Tối đa 4 ảnh cho mỗi sản phẩm. Ảnh đầu tiên sau khi lưu là ảnh đại diện; khách có thể chuyển xem các ảnh còn lại trong chi tiết sản phẩm.<br>JPG, PNG, WebP, AVIF, HEIC/HEIF · Tối đa 25 MB/ảnh gốc · Cắt vuông 1200 × 1200 px trước khi lưu.</p></section><p id="product-form-error" class="form-error" role="alert" hidden></p>
+      </div><div class="dialog-footer"><button class="btn btn-light" type="button" data-close-dialog="product-dialog">Hủy</button><button class="btn btn-primary" type="submit" id="save-product">Lưu sản phẩm</button></div>
+    </form>
+  </dialog>
+  <dialog id="crop-dialog" class="admin-dialog crop-dialog" aria-labelledby="crop-title"><div class="dialog-header"><div><p class="eyebrow">CHỈNH SỬA ẢNH</p><h2 id="crop-title">Chọn khung hình đẹp nhất</h2></div><button class="icon-button" data-close-dialog="crop-dialog" aria-label="Đóng">×</button></div><div class="dialog-body"><p class="section-hint">Kéo ảnh để di chuyển. Dùng thanh trượt để phóng to.</p><div class="crop-canvas-wrap"><canvas id="crop-canvas" width="1200" height="1200" aria-label="Khung cắt ảnh; kéo ảnh để thay đổi vị trí"></canvas></div><div class="crop-zoom"><span aria-hidden="true">−</span><input type="range" id="crop-zoom" min="1" max="4" step="0.01" value="1" aria-label="Phóng to ảnh"><span aria-hidden="true">＋</span></div><div class="crop-buttons"><button class="btn btn-light btn-sm" id="rotate-left">↶ Xoay trái</button><button class="btn btn-light btn-sm" id="rotate-right">↷ Xoay phải</button><button class="btn btn-light btn-sm" id="reset-crop">↺ Đặt lại</button></div><p id="crop-info" class="section-hint">Ảnh xuất: 1200 × 1200 px, JPEG.</p><p id="crop-error" class="form-error" role="alert" hidden></p></div><div class="dialog-footer"><button class="btn btn-light" data-close-dialog="crop-dialog">Hủy</button><button class="btn btn-primary" id="save-crop">Dùng ảnh này</button></div></dialog>
+  <dialog id="confirm-dialog" class="admin-dialog confirm-dialog" aria-labelledby="confirm-title"><div class="dialog-header"><h2 id="confirm-title">Xác nhận thay đổi</h2></div><div class="dialog-body"><p id="confirm-message"></p></div><div class="dialog-footer"><button class="btn btn-light" id="confirm-cancel">Hủy</button><button class="btn btn-primary" id="confirm-ok">Xác nhận</button></div></dialog>
+  <input id="image-file" type="file" accept="image/jpeg,image/png,image/webp,image/avif,image/heic,image/heif,.heic,.heif" hidden>
+  <datalist id="category-options"></datalist>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

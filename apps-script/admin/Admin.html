@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f8c72f">
+  <title>Quản trị cửa hàng · WebShop100</title>
+<style>
+
+:root{--ink:#171717;--muted:#777972;--line:#e7e7e2;--paper:#f5f5f0;--white:#fff;--yellow:#f8c72f;--yellow-soft:#fff9dd;--green:#3c8d65;--danger:#bd3540;--radius:14px;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);font-synthesis:none}
+*{box-sizing:border-box}body{margin:0;font-size:14px;line-height:1.5}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:wait;opacity:.6}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #e3b020;outline-offset:3px}a{color:inherit;text-decoration:none}button{color:inherit}h1,h2,h3,p{margin:0}button[hidden],[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.admin-shell{display:grid;grid-template-columns:238px minmax(0,1fr);min-height:100vh}.admin-sidebar{position:sticky;top:0;height:100vh;background:#fff;border-right:1px solid var(--line);padding:35px 20px 22px;display:flex;flex-direction:column}.admin-brand{display:flex;gap:12px;align-items:center;font-size:14px;font-weight:800;letter-spacing:.6px;margin-bottom:48px}.admin-brand small{font-size:10px;letter-spacing:0;display:block;color:var(--muted);font-weight:400;margin-top:3px}.brand-symbol{position:relative;display:grid;place-items:center;width:43px;height:43px;border-radius:12px;background:var(--yellow);font-size:24px;font-weight:900;letter-spacing:-4px;padding-right:4px}.brand-symbol span{font-size:13px;position:absolute;top:1px;right:3px;letter-spacing:0}.sidebar-section-label{font-size:9px;color:#8a8c84;letter-spacing:1.8px;font-weight:700;margin:0 13px 13px}.admin-nav{display:flex;flex-direction:column;gap:6px}.nav-button{border:0;background:none;border-radius:9px;text-align:left;display:flex;align-items:center;gap:12px;padding:13px;font-size:13px;font-weight:600;color:#66675f}.nav-button>span:first-child{font-size:20px;width:20px;text-align:center;font-weight:400}.nav-button.active{background:var(--yellow);color:var(--ink)}.nav-button:hover:not(.active){background:var(--paper)}.nav-count{margin-left:auto;background:rgba(255,255,255,.6);border-radius:5px;font-size:10px;padding:1px 6px}.sidebar-bottom{margin-top:auto}.sidebar-link{display:block;padding:10px 12px;color:#64655f;font-size:12px}.sidebar-link:hover{color:#111}.sidebar-user{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);margin-top:19px;padding-top:20px;font-size:11px;font-weight:700}.sidebar-user small{display:block;max-width:154px;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-size:10px;font-weight:400;margin-top:2px}.user-avatar{display:grid;place-items:center;width:33px;height:33px;background:#efefea;border-radius:50%;font-size:13px}.admin-main{min-width:0}.admin-topbar{height:76px;display:flex;justify-content:space-between;align-items:center;padding:0 44px;border-bottom:1px solid var(--line);background:#fff}.overline{font-size:10px;font-weight:700;letter-spacing:1.6px}.breadcrumb{font-size:12px;color:var(--muted);margin-left:18px}.mode-chip{font-size:10px;color:#57594e;border:1px solid var(--line);background:#fcfcfa;padding:6px 10px;border-radius:6px;display:flex;align-items:center;gap:7px}.mode-chip i{height:5px;width:5px;background:#d2a41b;border-radius:50%}.mode-chip.remote i{background:var(--green)}.workspace{max-width:1520px;margin:auto;padding:26px 44px 60px}.notice{display:flex;align-items:flex-start;gap:10px;background:var(--yellow-soft);border:1px solid #eee3b7;border-radius:10px;padding:12px 15px;font-size:11px;color:#74612b;margin-bottom:25px}.notice a{text-decoration:underline;font-weight:700}.notice>span{font-size:16px;line-height:1.2}.notice.error{background:#fff1f1;border-color:#edc9cc;color:#a32732}.page-heading{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:28px}.eyebrow{font-size:9px;font-weight:700;letter-spacing:2px;color:#8b8c80;margin-bottom:8px}h1{font-size:34px;letter-spacing:-1.3px;font-weight:800;line-height:1.2}.title-dot{color:#deb41c}.page-description{font-size:12px;color:var(--muted);margin-top:9px}.btn{min-height:42px;border:1px solid transparent;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 17px;font-size:12px;font-weight:700;white-space:nowrap}.btn-primary{background:var(--ink);color:#fff}.btn-primary:hover{background:#333}.page-heading>.btn-primary{background:var(--yellow);color:#151515}.page-heading>.btn-primary:hover{background:#e9b91e}.btn-light{background:#fff;border-color:var(--line);color:#45453f}.btn-light:hover{background:#f6f6f1}.btn-sm{font-size:11px;padding:7px 11px;min-height:34px}.stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:25px}.stat-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 23px}.stat-label{display:block;color:#73746c;font-size:11px}.stat-card strong{font-size:31px;line-height:1.2;letter-spacing:-1px;display:block;margin:10px 0}.stat-hint{color:#999a91;font-size:10px;display:flex;align-items:center;gap:5px}.status-dot{display:inline-block;width:5px;height:5px;border-radius:50%}.status-dot.green{background:var(--green)}.stat-icon{position:absolute;right:22px;top:22px;display:grid;place-items:center;background:#f6f6ef;width:32px;height:32px;border-radius:8px;font-size:19px;color:#929581}.content-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}.table-toolbar{padding:19px 22px;display:flex;align-items:center;gap:14px}.search-field{border:1px solid var(--line);border-radius:7px;display:flex;align-items:center;gap:9px;padding:8px 12px;max-width:360px;flex:1}.search-field span{font-size:21px;line-height:1;color:#84877c}.search-field input{border:0;outline:0;width:100%;font-size:11px;min-width:0;background:transparent}.search-field:focus-within{box-shadow:0 0 0 2px #eadb9c}.archive-toggle{display:flex;align-items:center;gap:6px;margin-left:auto;font-size:11px;color:#717267;white-space:nowrap}.archive-toggle input{accent-color:#171717}.table-scroll{overflow:auto}table{border-collapse:collapse;width:100%;text-align:left}th{font-size:8px;letter-spacing:1.1px;font-weight:700;color:#98998e;background:#fafaf7;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 17px;white-space:nowrap}th:first-child,td:first-child{padding-left:23px}td{border-bottom:1px solid #eeeFE9;padding:17px;font-size:11px;vertical-align:middle}.product-table td:first-child{min-width:250px}tr:last-child td{border-bottom:0}.product-cell{display:flex;gap:13px;align-items:center}.product-thumb{width:47px;height:47px;flex:none;object-fit:cover;background:#f4f4ed;border:1px solid #eeeeE8;border-radius:8px}.product-cell strong{font-size:12px;display:block;margin-bottom:4px;line-height:1.35;max-width:260px}.product-cell small{font-size:9px;color:#999c8f}.product-price{font-weight:700;white-space:nowrap}.product-old-price{font-size:9px;color:#a0a195;display:block;text-decoration:line-through;margin-top:3px}.status-badge{font-size:9px;font-weight:600;background:#eef7f0;color:#45825a;display:inline-flex;align-items:center;white-space:nowrap;padding:4px 8px;border-radius:5px}.status-badge.hidden{background:#f1f1ec;color:#888b7b}.status-badge.draft{background:#fff7d9;color:#967420}.status-badge.out{background:#fff0ed;color:#ae6958}.date-cell{font-size:9px;color:#9b9c92;white-space:nowrap}.row-actions{display:flex;gap:4px;align-items:center;justify-content:flex-end}.icon-button{border:0;background:transparent;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:22px;width:32px;height:32px;line-height:1;color:#7d8072;flex:none}.icon-button:hover{background:#f3f3ed;color:#171717}.icon-button.danger:hover{color:var(--danger);background:#fff0f0}.row-actions .icon-button{font-size:16px;width:28px;height:28px}.table-footer{padding:17px 22px;display:flex;justify-content:space-between;align-items:center;gap:15px;border-top:1px solid var(--line);font-size:10px;color:#898c7d}.pagination{display:flex;gap:5px}.page-btn{font-size:10px;border:1px solid var(--line);background:#fff;border-radius:5px;min-width:28px;height:28px}.page-btn.current{background:var(--yellow);border-color:var(--yellow);color:#171717;font-weight:700}.page-btn:disabled{opacity:.4;cursor:default}.empty-state{text-align:center;padding:55px 25px}.empty-state>span{font-size:40px;color:#d0d1c4}.empty-state h3{font-size:14px;margin:8px 0}.empty-state p{font-size:12px;color:#939584}.data-tools{display:flex;align-items:center;gap:16px;margin:18px 2px;flex-wrap:wrap}.text-button{padding:0;border:0;background:none;color:#74766a;font-size:10px}.text-button:hover{color:#111;text-decoration:underline}.data-tools>span{margin-left:auto;font-size:9px;color:#9b9d91}.settings-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px}.form-card{padding:27px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin-bottom:22px}.form-card h2{font-size:16px;letter-spacing:-.3px;margin-bottom:9px}.section-hint{font-size:11px;color:#909382;line-height:1.7;margin:8px 0 17px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.span-2{grid-column:span 2}label{font-size:11px;color:#676a5b;font-weight:600;display:block}label>input:not([type=checkbox]),label>select,label>textarea,.image-url-field input{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid #e1e3d7;border-radius:6px;font-size:12px;color:#202219;background:#fff;min-height:40px;line-height:1.45}textarea{resize:vertical;min-height:72px}label small{font-weight:400;color:#959786;font-size:10px;display:block;margin-top:5px}.required{color:#ad8523}.image-url-field{display:flex;gap:8px;margin-top:6px}.image-url-field input{margin:0;min-width:0}.image-url-field .btn{font-size:10px;padding:8px 11px}.settings-aside .form-card{padding:24px}.settings-aside label+label{margin-top:15px}.tip-card{padding:25px;border:1px solid #eee1a1;background:var(--yellow-soft);border-radius:var(--radius)}.tip-card>span{font-size:25px;color:#b18b16}.tip-card h3{font-size:12px;margin:10px 0}.tip-card p{font-size:11px;color:#9a8a4e;line-height:1.8}.price-table input{max-width:160px;width:100%;border:1px solid #e0e2d8;border-radius:5px;padding:9px;font-size:11px}.price-table td:first-child input{min-width:150px;max-width:none}.price-table input[type=checkbox]{accent-color:#151515;width:16px;height:16px}.price-table input[data-field=sort]{max-width:70px}.price-table th:nth-child(5),.price-table td:nth-child(5){text-align:center}
+.admin-dialog{border:1px solid var(--line);padding:0;border-radius:16px;width:min(760px,calc(100% - 28px));max-height:calc(100vh - 44px);background:#fff;color:var(--ink);box-shadow:0 25px 100px #0003}.admin-dialog::backdrop{background:#17190ed0;backdrop-filter:blur(4px)}.dialog-header{display:flex;align-items:center;justify-content:space-between;padding:23px 28px;border-bottom:1px solid var(--line);gap:15px}.dialog-header h2{font-size:21px;letter-spacing:-.6px}.dialog-header .eyebrow{margin-bottom:5px}.dialog-body{padding:25px 28px;overflow-y:auto;max-height:calc(100vh - 232px);overscroll-behavior:contain}.dialog-footer{padding:18px 28px;display:flex;justify-content:flex-end;gap:10px;border-top:1px solid var(--line);background:#fafaf6}.check-field{display:flex;gap:8px;align-items:center;padding-top:4px}.check-field input{accent-color:#171717;width:16px;height:16px;margin:0}.product-images-section{border-top:1px solid var(--line);margin-top:24px;padding-top:20px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}.section-heading h3{font-size:13px}.section-heading>span{font-size:9px;color:#a0a394}.image-slots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.image-slot{position:relative}.image-slot-preview{width:100%;aspect-ratio:1;border:1px dashed #d8dccb;border-radius:9px;background:#fafbf6;overflow:hidden;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:#9da38c;font-size:10px}.image-slot-preview>span{font-size:24px;line-height:1}.image-slot-preview img{width:100%;height:100%;object-fit:cover}.image-slot-preview:hover{border-color:#c0a444;background:#fff9df}.image-slot-label{font-size:9px;text-align:center;display:block;margin-top:6px;color:#858a77}.remove-image{position:absolute;right:3px;top:3px;border:0;width:22px;height:22px;border-radius:50%;background:#fffE;box-shadow:0 1px 5px #0002;color:#656754;line-height:1}.image-url-button{display:block;width:100%;border:0;background:none;color:#8e917f;font-size:9px;text-decoration:underline;padding:4px 0}.form-error{font-size:12px;color:var(--danger);background:#fff2f2;padding:10px 12px;border-radius:7px;margin-top:14px}.crop-dialog{width:min(600px,calc(100% - 28px))}.crop-dialog .dialog-body{max-height:calc(100vh - 210px)}.crop-canvas-wrap{max-width:400px;margin:0 auto;border-radius:10px;overflow:hidden;background:#f0f0eb;box-shadow:0 0 0 1px #dddFcf}.crop-canvas-wrap canvas{display:block;width:100%;height:auto;touch-action:none;cursor:grab}.crop-canvas-wrap canvas:active{cursor:grabbing}.crop-zoom{display:flex;align-items:center;gap:14px;margin:17px auto;max-width:400px;color:#929681;font-size:17px}.crop-zoom input{width:100%;accent-color:#dcb223}.crop-buttons{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}#crop-info{text-align:center;margin-bottom:0}.confirm-dialog{max-width:450px}.confirm-dialog .dialog-body{font-size:13px;line-height:1.8}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);padding:13px 20px;max-width:calc(100% - 30px);border-radius:9px;background:#202419;color:#fff;font-size:12px;box-shadow:0 8px 25px #0003;z-index:100}.toast.error{background:#9c3039}.busy{pointer-events:none;opacity:.7}
+@media(min-width:1500px){.workspace{padding-top:35px}.table-toolbar{padding:22px 25px}td{padding-top:21px;padding-bottom:21px}}@media(max-width:1180px){.admin-shell{grid-template-columns:205px minmax(0,1fr)}.workspace{padding:25px}.admin-topbar{padding:0 25px}.settings-layout{grid-template-columns:minmax(0,1fr) 270px}.form-card,.settings-aside .form-card{padding:20px}.stat-card{padding:19px}.stat-icon{right:18px;top:18px}}@media(max-width:950px){.settings-layout{grid-template-columns:1fr}.settings-aside{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.settings-aside .tip-card{grid-column:1}.settings-aside .form-card:nth-child(2){grid-column:2;grid-row:1 / span 2}.stat-grid{gap:10px}.stat-icon{display:none}.table-toolbar{padding:16px}.data-tools>span{width:100%;margin:0}.stat-hint{font-size:9px}.page-heading{align-items:flex-end}}@media(max-width:720px){.admin-shell{display:block}.admin-sidebar{position:relative;width:100%;height:auto;padding:16px 18px;border-right:0;border-bottom:1px solid var(--line)}.admin-brand{margin:0 0 15px}.brand-symbol{width:35px;height:35px;font-size:22px}.admin-brand small{display:none}.sidebar-section-label,.sidebar-user{display:none}.admin-nav{flex-direction:row;gap:5px}.nav-button{flex:1;font-size:10px;justify-content:center;padding:9px 6px;gap:6px}.nav-button>span:first-child{font-size:16px;width:auto}.nav-count{display:none}.sidebar-bottom{position:absolute;top:18px;right:12px;display:flex}.sidebar-link{font-size:10px;padding:6px}.admin-topbar{height:52px;padding:0 20px}.overline{font-size:8px}.breadcrumb{font-size:10px;margin-left:10px}.workspace{padding:19px 16px 40px}.notice{font-size:10px;padding:11px;margin-bottom:23px}.page-heading{gap:12px;margin-bottom:22px}h1{font-size:29px}.page-description{font-size:10px}.page-heading>.btn{font-size:10px;padding:9px 11px;min-height:37px}.eyebrow{font-size:8px;letter-spacing:1.5px}.stat-card{padding:15px 12px}.stat-label{font-size:9px}.stat-card strong{font-size:26px;margin:8px 0}.stat-hint{font-size:8px;line-height:1.5;min-height:24px}.stat-grid{margin-bottom:20px}.table-toolbar{flex-wrap:wrap;gap:10px}.search-field{width:100%;max-width:none;flex-basis:100%}.archive-toggle{margin-left:0;margin-right:auto}.table-footer{padding:14px;flex-wrap:wrap}.settings-aside{display:block}.form-grid{gap:15px 12px}.form-card{padding:20px 17px}.image-url-field{flex-wrap:wrap}.image-url-field input{flex-basis:100%}.dialog-header{padding:19px}.dialog-body{padding:20px}.dialog-header h2{font-size:19px}.dialog-footer{padding:15px 20px}.image-slots{gap:6px}.image-slot-label{font-size:8px}.section-heading{display:block}.section-heading>span{display:block;margin-top:4px}.crop-buttons .btn{font-size:10px;padding:6px 9px}.mode-chip{font-size:9px}.data-tools{gap:12px}.text-button{font-size:9px}.admin-dialog .dialog-body{max-height:calc(100dvh - 230px)}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+@media(max-width:480px){.image-slots{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.image-slot-preview{font-size:12px}.image-slot-label{font-size:10px}.image-url-button{font-size:11px;min-height:30px}.remove-image{width:28px;height:28px}}
+
+</style>
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="index.html" id="brand-home"><span class="brand-symbol" aria-hidden="true">W<span>↗</span></span><span>SHOP STUDIO<small>Không gian quản trị</small></span></a>
+      <div class="sidebar-section-label">CỬA HÀNG CỦA BẠN</div>
+      <nav class="admin-nav" aria-label="Quản trị cửa hàng">
+        <button class="nav-button active" data-view="products"><span aria-hidden="true">▦</span>Sản phẩm<span id="nav-count" class="nav-count">0</span></button>
+        <button class="nav-button" data-view="settings"><span aria-hidden="true">◈</span>Nội dung shop</button>
+        <button class="nav-button" data-view="prices"><span aria-hidden="true">≋</span>Bộ lọc giá</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="index.html" id="open-shop" class="sidebar-link" target="_blank" rel="noopener">↗ Xem cửa hàng</a>
+        <a href="#" id="open-sheet" class="sidebar-link" target="_blank" rel="noopener" hidden>▤ Mở Google Sheets</a>
+        <div class="sidebar-user"><span class="user-avatar">S</span><span>Quản trị viên<small id="admin-email">Chế độ dùng thử tại máy</small></span></div>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-topbar"><div><span class="overline">SHOP STUDIO</span><span class="breadcrumb" id="breadcrumb">/ Sản phẩm</span></div><span class="mode-chip" id="mode-chip"><i></i> Bản local</span></header>
+      <div class="workspace">
+        <div id="mode-notice" class="notice"><span aria-hidden="true">ⓘ</span><p>Đang tải dữ liệu quản trị…</p></div>
+        <div id="fatal-error" class="notice error" role="alert" hidden></div>
+        <section id="products-view" class="view-panel">
+          <div class="page-heading"><div><p class="eyebrow">QUẢN LÝ CỬA HÀNG</p><h1>Sản phẩm<span class="title-dot">.</span></h1><p class="page-description">Mọi sản phẩm. Một nơi quản lý.</p></div><button class="btn btn-primary" id="add-product"><span aria-hidden="true">＋</span>Thêm sản phẩm</button></div>
+          <div class="stat-grid">
+            <article class="stat-card"><span class="stat-label">Tổng sản phẩm</span><strong id="stat-total">—</strong><span class="stat-hint">Trong danh mục cửa hàng</span><span class="stat-icon" aria-hidden="true">▦</span></article>
+            <article class="stat-card"><span class="stat-label">Đang hiển thị</span><strong id="stat-visible">—</strong><span class="stat-hint"><i class="status-dot green"></i>Khách hàng có thể xem</span><span class="stat-icon" aria-hidden="true">◉</span></article>
+            <article class="stat-card"><span class="stat-label">Đang tạm ẩn</span><strong id="stat-hidden">—</strong><span class="stat-hint">Bao gồm sản phẩm nháp</span><span class="stat-icon" aria-hidden="true">◌</span></article>
+          </div>
+          <div class="content-card">
+            <div class="table-toolbar"><div class="search-field"><span aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Tìm mã, tên hoặc danh mục…" aria-label="Tìm sản phẩm"></div><label class="archive-toggle"><input type="checkbox" id="show-archived"> Đã lưu trữ</label><button class="btn btn-light btn-sm" id="reload-data">↻ Tải lại</button></div>
+            <div class="table-scroll"><table class="product-table"><thead><tr><th>SẢN PHẨM</th><th>DANH MỤC</th><th>GIÁ BÁN</th><th>TRẠNG THÁI</th><th>CẬP NHẬT</th><th><span class="sr-only">Thao tác</span></th></tr></thead><tbody id="product-rows"></tbody></table></div>
+            <div id="product-empty" class="empty-state" hidden><span aria-hidden="true">▧</span><h3>Chưa có sản phẩm phù hợp</h3><p>Thử từ khóa khác hoặc thêm sản phẩm đầu tiên.</p></div>
+            <div class="table-footer"><span id="product-result-count">Đang tải…</span><div class="pagination" id="admin-pagination" aria-label="Phân trang sản phẩm"></div></div>
+          </div>
+          <div class="data-tools"><button class="text-button" id="export-json">↓ Xuất dữ liệu JSON</button><button class="text-button" id="import-json">↑ Nhập dữ liệu JSON</button><button class="text-button" id="export-js">↓ Xuất data.js cho website</button><span id="data-tools-help">Sao lưu dữ liệu hoặc đưa dữ liệu vào bản website.</span></div>
+          <input type="file" id="import-file" accept="application/json,.json" hidden>
+        </section>
+        <section id="settings-view" class="view-panel" hidden>
+          <div class="page-heading"><div><p class="eyebrow">NHẬN DIỆN & NỘI DUNG</p><h1>Nội dung shop<span class="title-dot">.</span></h1><p class="page-description">Kể câu chuyện của cửa hàng theo cách của bạn.</p></div><button class="btn btn-primary" form="settings-form" type="submit">Lưu thay đổi</button></div>
+          <form id="settings-form" class="settings-layout">
+            <div class="settings-main">
+              <section class="form-card"><h2>Nhận diện thương hiệu</h2><p class="section-hint">Thông tin xuất hiện trên đầu trang và trình duyệt.</p><div class="form-grid">
+                <label>Tên shop <span class="required">*</span><input name="name" required maxlength="100"></label><label>Slogan<input name="slogan" maxlength="200"></label>
+                <label class="span-2">Logo<div class="image-url-field"><input name="logo" placeholder="https://… hoặc assets/images/logo.svg"><button class="btn btn-light" type="button" data-settings-image="logo">Chọn ảnh</button></div><small>PNG có nền trong suốt được giữ nguyên khi dán URL; ảnh tải mới được cắt vuông.</small></label>
+                <label class="span-2">Tiêu đề tab trình duyệt<input name="seoTitle" maxlength="200"></label><label class="span-2">Mô tả tìm kiếm<textarea name="seoDescription" rows="3" maxlength="500"></textarea></label>
+              </div></section>
+              <section class="form-card"><h2>Khu vực đầu trang</h2><p class="section-hint">Nội dung giới thiệu lớn và ảnh nổi bật trên trang chủ.</p><div class="form-grid">
+                <label class="span-2">Nhãn nhỏ<input name="heroEyebrow" maxlength="200"></label><label class="span-2">Tiêu đề lớn<textarea name="heroTitle" rows="2" maxlength="200"></textarea><small>Xuống dòng để chia tiêu đề theo ý muốn.</small></label><label class="span-2">Mô tả<textarea name="heroDescription" rows="3" maxlength="1000"></textarea></label>
+                <label>Nhãn nổi bật<input name="heroBadge" maxlength="150"></label><label>Nội dung nổi bật<input name="heroHighlight" maxlength="200"></label><label>Tên sản phẩm ở hero<input name="heroProductName" maxlength="100"></label><label>Mô tả sản phẩm ở hero<input name="heroProductDescription" maxlength="300"></label>
+                <label class="span-2">Ảnh hero<div class="image-url-field"><input name="heroImage" placeholder="https://… hoặc assets/images/hero-tech.jpg"><button class="btn btn-light" type="button" data-settings-image="heroImage">Chọn ảnh</button></div><small>Ảnh tải mới được cắt theo tỷ lệ 16:9, xuất 1920 × 1080 px.</small></label>
+              </div></section>
+              <section class="form-card"><h2>Thông tin liên hệ</h2><div class="form-grid"><label class="span-2">Giới thiệu ngắn<textarea name="about" rows="3" maxlength="2000"></textarea></label><label class="span-2">Địa chỉ<input name="address" maxlength="300"></label><label>Điện thoại<input name="phone" type="tel" maxlength="50"></label><label>Email<input name="email" type="email" maxlength="200"></label><label>Tên Fanpage<input name="fanpageName" maxlength="150"></label><label>Username Fanpage<input name="fanpageUsername" maxlength="150"></label></div></section>
+            </div>
+            <div class="settings-aside">
+              <section class="form-card"><h2>Hiển thị</h2><label>Số sản phẩm mỗi trang<input name="pageSize" type="number" required min="1" max="100" step="1"></label><p class="section-hint">Bản giao diện mẫu sử dụng 5 sản phẩm mỗi trang.</p></section>
+              <section class="form-card"><h2>Kênh nhận đơn</h2><p class="section-hint">Khách sao chép đơn và tự gửi qua kênh được chọn.</p><label>Kênh mặc định<select name="contactChannel"><option value="messenger">Facebook Messenger</option><option value="instagram">Instagram</option><option value="zalo">Zalo cá nhân</option><option value="zaloOA">Zalo OA</option><option value="tiktok">TikTok</option></select></label><label>URL Messenger<input name="channel_messenger" type="url" placeholder="https://m.me/tenfanpage"></label><label>URL Instagram<input name="channel_instagram" type="url" placeholder="https://www.instagram.com/ten"></label><label>URL Zalo cá nhân<input name="channel_zalo" type="url" placeholder="https://zalo.me/84900000000"></label><label>URL Zalo OA<input name="channel_zaloOA" type="url" placeholder="https://zalo.me/…"></label><label>URL TikTok<input name="channel_tiktok" type="url" placeholder="https://www.tiktok.com/@ten"></label></section>
+              <section class="tip-card"><span aria-hidden="true">✦</span><h3>Cập nhật thật đơn giản</h3><p>Nội dung đã lưu sẽ xuất hiện sau khi tải lại trang cửa hàng. Với Google Sheets, API có thể lưu đệm tối đa khoảng 30 giây.</p></section>
+            </div>
+          </form>
+        </section>
+        <section id="prices-view" class="view-panel" hidden>
+          <div class="page-heading"><div><p class="eyebrow">BỘ LỌC DANH MỤC</p><h1>Khoảng giá<span class="title-dot">.</span></h1><p class="page-description">Giúp khách tìm được sản phẩm trong ngân sách.</p></div><button class="btn btn-primary" id="add-price">＋ Thêm khoảng giá</button></div>
+          <div class="content-card"><div class="table-scroll"><table class="price-table"><thead><tr><th>TÊN HIỂN THỊ</th><th>GIÁ TỪ (₫)</th><th>GIÁ ĐẾN (₫)</th><th>THỨ TỰ</th><th>HIỂN THỊ</th><th><span class="sr-only">Xóa</span></th></tr></thead><tbody id="price-rows"></tbody></table></div><div id="prices-empty" class="empty-state" hidden><h3>Chưa có khoảng giá</h3><p>Thêm khoảng giá đầu tiên để khách lọc sản phẩm.</p></div><div class="table-footer"><span>Để trống “Giá đến” nếu không giới hạn giá tối đa.</span><button class="btn btn-primary" id="save-prices">Lưu bộ lọc giá</button></div></div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <dialog id="product-dialog" class="admin-dialog product-dialog" aria-labelledby="product-dialog-title">
+    <form id="product-form"><div class="dialog-header"><div><p class="eyebrow">DANH MỤC CỬA HÀNG</p><h2 id="product-dialog-title">Thêm sản phẩm</h2></div><button class="icon-button" type="button" data-close-dialog="product-dialog" aria-label="Đóng">×</button></div>
+      <div class="dialog-body"><div class="form-grid"><label>Mã sản phẩm <span class="required">*</span><input name="code" required maxlength="60" placeholder="VD: LAP-001"></label><label>Danh mục<input name="category" maxlength="100" list="category-options" placeholder="VD: Laptop"></label><label class="span-2">Tên sản phẩm <span class="required">*</span><input name="name" required maxlength="200"></label><label>Giá bán (₫) <span class="required">*</span><input name="price" type="number" required min="0" step="1"></label><label>Giá gốc (₫)<input name="originalPrice" type="number" min="0" step="1" placeholder="Để trống nếu không giảm giá"></label><label class="span-2">Mô tả ngắn<textarea name="shortDescription" rows="2" maxlength="500"></textarea></label><label class="span-2">Mô tả chi tiết<textarea name="description" rows="5" maxlength="10000"></textarea></label><label class="span-2">Thẻ sản phẩm<input name="tags" maxlength="1000" placeholder="USB-C, Sạc nhanh, Chính hãng"><small>Ngăn cách các thẻ bằng dấu phẩy.</small></label><label>Trạng thái<select name="status"><option value="active">Đang bán</option><option value="out_of_stock">Hết hàng</option><option value="draft">Bản nháp</option></select></label><label>Tồn kho<input name="stock" type="number" min="0" step="1" placeholder="Để trống nếu không theo dõi"></label><label class="check-field"><input name="visible" type="checkbox"> Hiển thị trên cửa hàng</label><label class="check-field"><input name="featured" type="checkbox"> Đánh dấu nổi bật</label></div>
+        <section class="product-images-section"><div class="section-heading"><h3>Ảnh sản phẩm</h3><span id="product-image-count" role="status">0/4 ảnh · 1 ảnh đại diện + 3 ảnh phụ</span></div><div class="image-slots" id="image-slots"></div><p class="section-hint">Tối đa 4 ảnh cho mỗi sản phẩm. Ảnh đầu tiên sau khi lưu là ảnh đại diện; khách có thể chuyển xem các ảnh còn lại trong chi tiết sản phẩm.<br>JPG, PNG, WebP, AVIF, HEIC/HEIF · Tối đa 25 MB/ảnh gốc · Cắt vuông 1200 × 1200 px trước khi lưu.</p></section><p id="product-form-error" class="form-error" role="alert" hidden></p>
+      </div><div class="dialog-footer"><button class="btn btn-light" type="button" data-close-dialog="product-dialog">Hủy</button><button class="btn btn-primary" type="submit" id="save-product">Lưu sản phẩm</button></div>
+    </form>
+  </dialog>
+  <dialog id="crop-dialog" class="admin-dialog crop-dialog" aria-labelledby="crop-title"><div class="dialog-header"><div><p class="eyebrow">CHỈNH SỬA ẢNH</p><h2 id="crop-title">Chọn khung hình đẹp nhất</h2></div><button class="icon-button" data-close-dialog="crop-dialog" aria-label="Đóng">×</button></div><div class="dialog-body"><p class="section-hint">Kéo ảnh để di chuyển. Dùng thanh trượt để phóng to.</p><div class="crop-canvas-wrap"><canvas id="crop-canvas" width="1200" height="1200" aria-label="Khung cắt ảnh; kéo ảnh để thay đổi vị trí"></canvas></div><div class="crop-zoom"><span aria-hidden="true">−</span><input type="range" id="crop-zoom" min="1" max="4" step="0.01" value="1" aria-label="Phóng to ảnh"><span aria-hidden="true">＋</span></div><div class="crop-buttons"><button class="btn btn-light btn-sm" id="rotate-left">↶ Xoay trái</button><button class="btn btn-light btn-sm" id="rotate-right">↷ Xoay phải</button><button class="btn btn-light btn-sm" id="reset-crop">↺ Đặt lại</button></div><p id="crop-info" class="section-hint">Ảnh xuất: 1200 × 1200 px, JPEG.</p><p id="crop-error" class="form-error" role="alert" hidden></p></div><div class="dialog-footer"><button class="btn btn-light" data-close-dialog="crop-dialog">Hủy</button><button class="btn btn-primary" id="save-crop">Dùng ảnh này</button></div></dialog>
+  <dialog id="confirm-dialog" class="admin-dialog confirm-dialog" aria-labelledby="confirm-title"><div class="dialog-header"><h2 id="confirm-title">Xác nhận thay đổi</h2></div><div class="dialog-body"><p id="confirm-message"></p></div><div class="dialog-footer"><button class="btn btn-light" id="confirm-cancel">Hủy</button><button class="btn btn-primary" id="confirm-ok">Xác nhận</button></div></dialog>
+  <input id="image-file" type="file" accept="image/jpeg,image/png,image/webp,image/avif,image/heic,image/heif,.heic,.heif" hidden>
+  <datalist id="category-options"></datalist>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script>window.SHOP_CONFIG = {};</script>
+
+<script>
+/* WebShop100 Admin — no build step. Apps Script uses this same UI through google.script.run. */
+(function () {
+  'use strict';
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+  const copy = value => JSON.parse(JSON.stringify(value));
+  const config = window.SHOP_CONFIG || {};
+  const dataKey = config.localDataKey || 'webshop100.catalog.v1';
+  const remote = Boolean(window.google && window.google.script && window.google.script.run);
+  const esc = value => String(value == null ? '' : value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  const normalizeText = text => String(text || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
+  const uid = prefix => prefix + '-' + (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 9));
+  const currency = value => new Intl.NumberFormat('vi-VN', {style:'currency', currency:'VND', maximumFractionDigits:0}).format(Number(value) || 0);
+  const dateLabel = value => value && !Number.isNaN(Date.parse(value)) ? new Intl.DateTimeFormat('vi-VN', {day:'2-digit',month:'2-digit',year:'numeric'}).format(new Date(value)) : '—';
+  const emptyImage = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f3f3ea"/><path d="M24 69h52V31H24zM25 66l19-20 13 14 8-10 10 13" fill="none" stroke="#c2c7b2" stroke-width="3"/><circle cx="63" cy="41" r="5" fill="#c2c7b2"/></svg>');
+  const settingFields = ['name','slogan','logo','seoTitle','seoDescription','heroEyebrow','heroTitle','heroDescription','heroImage','heroBadge','heroHighlight','heroProductName','heroProductDescription','about','address','phone','email','fanpageName','fanpageUsername','pageSize','contactChannel'];
+  const channelFields = ['messenger','instagram','zalo','zaloOA','tiktok'];
+  const maxProductImages = 4;
+  const state = {catalog:null, meta:{}, view:'products', page:1, pageSize:10, query:'', archived:false, draft:null, productDirty:false, settingsDirty:false, pricesDirty:false, priceDraft:[], loaded:false};
+  let toastTimer;
+  let pendingImageTarget = null;
+  let crop = null;
+  let decoderPromise;
+  let confirmResolve = null;
+
+  function notify(message, isError = false) {
+    clearTimeout(toastTimer);
+    const element = $('#toast');
+    element.textContent = message;
+    element.classList.toggle('error', isError);
+    element.hidden = false;
+    toastTimer = setTimeout(() => { element.hidden = true; }, isError ? 7000 : 3800);
+  }
+  function showError(selector, error) {
+    const element = $(selector);
+    element.textContent = error && error.message ? error.message : String(error);
+    element.hidden = false;
+  }
+  async function withBusy(button, fn, text = 'Đang lưu…') {
+    if (button.disabled) return;
+    const old = button.textContent;
+    button.disabled = true;
+    button.textContent = text;
+    try { return await fn(); }
+    finally { button.disabled = false; button.textContent = old; }
+  }
+  function confirmAction(message, label = 'Xác nhận') {
+    if (confirmResolve) return Promise.resolve(false);
+    $('#confirm-message').textContent = message;
+    $('#confirm-ok').textContent = label;
+    $('#confirm-dialog').showModal();
+    $('#confirm-cancel').focus();
+    return new Promise(resolve => { confirmResolve = resolve; });
+  }
+  function finishConfirm(result) {
+    $('#confirm-dialog').close();
+    if (confirmResolve) { const resolve = confirmResolve; confirmResolve = null; resolve(result); }
+  }
+  function defaultCatalog() {
+    const seed = window.SHOP_DATA || {products:[], settings:{name:'My Shop',slogan:'Uy tín · Giá tốt',pageSize:5,contactChannel:'messenger',channels:{}},priceFilters:[]};
+    return copy(seed);
+  }
+  function normalizeCatalog(input) {
+    if (!input || !Array.isArray(input.products) || !input.settings || !Array.isArray(input.priceFilters)) throw new Error('File cần chứa products, settings và priceFilters. Hãy chọn file JSON được xuất từ Admin.');
+    if (input.products.length > 5000 || input.priceFilters.length > 100) throw new Error('Dữ liệu vượt giới hạn 5.000 sản phẩm hoặc 100 bộ lọc.');
+    const seed = defaultCatalog();
+    const ids = new Set(), codes = new Set();
+    const products = input.products.map(raw => {
+      const p = validateProduct(raw);
+      p.id = String(raw.id || uid('sp'));
+      if (ids.has(p.id) || codes.has(p.code.toLowerCase())) throw new Error('Trùng ID hoặc mã sản phẩm trong file: ' + p.code);
+      ids.add(p.id); codes.add(p.code.toLowerCase());
+      p.archived = raw.archived === true;
+      p.updatedAt = raw.updatedAt || new Date().toISOString();
+      return p;
+    });
+    return {products, settings:validateSettings({...seed.settings, ...input.settings}), priceFilters:validatePrices(input.priceFilters)};
+  }
+  function safeImageUrl(value) {
+    const url = String(value || '').trim();
+    if (!url) return '';
+    if (/^https:\/\//i.test(url) || /^assets\/[a-zA-Z0-9_./-]+$/.test(url) || (!remote && /^data:image\/(?:jpeg|png|webp|avif);base64,[a-zA-Z0-9+/=]+$/.test(url))) return url;
+    throw new Error('URL ảnh cần là HTTPS hoặc đường dẫn assets/ trong dự án.');
+  }
+  function productImages(values) {
+    return (Array.isArray(values) ? values : []).filter(value=>String(value == null ? '' : value).trim() !== '').slice(0,maxProductImages);
+  }
+  function validateProduct(raw) {
+    if (!raw || raw.price == null || (typeof raw.price === 'string' && raw.price.trim() === '')) throw new Error('Vui lòng nhập giá bán. Giá 0 cần được khai báo rõ bằng số 0.');
+    const p = {
+      id:String(raw.id || ''), code:String(raw.code || '').trim().slice(0,60), name:String(raw.name || '').trim().slice(0,200),
+      category:String(raw.category || '').trim().slice(0,100), description:String(raw.description || '').slice(0,10000), shortDescription:String(raw.shortDescription || '').slice(0,500),
+      price:Number(raw.price), originalPrice:raw.originalPrice === '' || raw.originalPrice == null ? null : Number(raw.originalPrice),
+      tags:(Array.isArray(raw.tags) ? raw.tags : String(raw.tags || '').split(',')).map(tag=>String(tag).trim().slice(0,80)).filter(Boolean).slice(0,20),
+      featured:raw.featured === true, visible:raw.visible !== false,
+      status:['active','out_of_stock','draft'].includes(raw.status) ? raw.status : 'active',
+      stock:raw.stock === '' || raw.stock == null ? null : Number(raw.stock),
+      images:productImages(raw.images).map(safeImageUrl).filter(Boolean),
+      updatedAt:raw.updatedAt || '', archived:raw.archived === true
+    };
+    if (!p.code || !p.name) throw new Error('Vui lòng nhập mã và tên sản phẩm.');
+    if (!Number.isFinite(p.price) || p.price < 0 || p.price > 1e12) throw new Error('Giá bán phải là số từ 0 đến 1.000 tỷ.');
+    if (p.originalPrice != null && (!Number.isFinite(p.originalPrice) || p.originalPrice < 0 || p.originalPrice > 1e12)) throw new Error('Giá gốc không hợp lệ.');
+    if (p.originalPrice && p.originalPrice < p.price) throw new Error('Giá gốc cần lớn hơn hoặc bằng giá bán.');
+    if (p.stock != null && (!Number.isInteger(p.stock) || p.stock < 0 || p.stock > 1e9)) throw new Error('Tồn kho phải là số nguyên từ 0 trở lên.');
+    return p;
+  }
+  function validateSettings(raw) {
+    const settings = {};
+    settingFields.forEach(key => { settings[key] = String(raw[key] == null ? '' : raw[key]).trim(); });
+    if (!settings.name) throw new Error('Vui lòng nhập tên shop.');
+    settings.pageSize = Number(raw.pageSize);
+    if (!Number.isInteger(settings.pageSize) || settings.pageSize < 1 || settings.pageSize > 100) throw new Error('Số sản phẩm/trang phải từ 1 đến 100.');
+    if (!channelFields.includes(settings.contactChannel)) settings.contactChannel = 'messenger';
+    settings.logo = safeImageUrl(settings.logo);
+    settings.heroImage = safeImageUrl(settings.heroImage);
+    settings.channels = {};
+    channelFields.forEach(key => {
+      const url = String(raw.channels && raw.channels[key] || '').trim();
+      if (url && !/^https:\/\//i.test(url)) throw new Error('Liên kết ' + key + ' cần bắt đầu bằng https://.');
+      settings.channels[key] = url;
+    });
+    return settings;
+  }
+  function validatePrices(items) {
+    const seen = new Set();
+    return items.map((raw,index) => {
+      const item = {id:String(raw.id || uid('gia')), label:String(raw.label || '').trim(), min:raw.min === '' || raw.min == null ? 0 : Number(raw.min), max:raw.max === '' || raw.max == null ? null : Number(raw.max), sort:Number(raw.sort || 0), enabled:raw.enabled !== false};
+      if (!item.label) throw new Error('Khoảng giá thứ ' + (index + 1) + ' chưa có tên.');
+      if (seen.has(item.id)) throw new Error('ID khoảng giá bị trùng.');
+      seen.add(item.id);
+      if (!Number.isFinite(item.min) || item.min < 0 || item.min > 1e12 || (item.max != null && (!Number.isFinite(item.max) || item.max < item.min || item.max > 1e12))) throw new Error('Khoảng giá “' + item.label + '” không hợp lệ. Giá đến cần lớn hơn hoặc bằng giá từ.');
+      if (!Number.isInteger(item.sort) || Math.abs(item.sort) > 10000) throw new Error('Thứ tự khoảng giá phải là số nguyên từ -10000 đến 10000.');
+      item.label = item.label.slice(0,100);
+      return item;
+    });
+  }
+  function gsCall(method, ...args) {
+    return new Promise((resolve,reject) => {
+      window.google.script.run.withSuccessHandler(resolve).withFailureHandler(error => reject(new Error(error.message || String(error))))[method](...args);
+    });
+  }
+  function persistLocal(catalog) {
+    try { localStorage.setItem(dataKey, JSON.stringify(catalog)); }
+    catch (error) { throw new Error('Bộ nhớ trình duyệt không đủ hoặc đang bị chặn. Hãy xuất bản sao JSON và dùng Google Sheets/Cloudinary để quản lý nhiều ảnh. Chưa ghi thay đổi này.'); }
+    return {catalog:copy(catalog), meta:{mode:'local',email:'Chế độ dùng thử tại máy',publicSiteUrl:new URL('./', location.href).href}};
+  }
+  function latestLocalCatalog() {
+    try { const saved=localStorage.getItem(dataKey);return saved?normalizeCatalog(JSON.parse(saved)):copy(state.catalog); }
+    catch(error){throw new Error('Không đọc được dữ liệu local mới nhất. Hãy xuất bản sao và tải lại trang trước khi tiếp tục.');}
+  }
+  const repository = {
+    async load() {
+      if (remote) return gsCall('adminBootstrap');
+      let saved = null;
+      try { saved = localStorage.getItem(dataKey); } catch (error) { notify('Trình duyệt đang chặn lưu dữ liệu local.',true); }
+      return {catalog:saved ? normalizeCatalog(JSON.parse(saved)) : defaultCatalog(), meta:{mode:'local',email:'Chế độ dùng thử tại máy',publicSiteUrl:new URL('./', location.href).href}};
+    },
+    async saveProduct(raw) {
+      const p = validateProduct(raw);
+      if (remote) return gsCall('adminSaveProduct',p);
+      const next = latestLocalCatalog();
+      if (next.products.some(item => item.id !== p.id && item.code.toLowerCase() === p.code.toLowerCase())) throw new Error('Mã sản phẩm đã tồn tại, kể cả trong danh sách lưu trữ.');
+      const index = next.products.findIndex(item => item.id === p.id);
+      if (p.id && index < 0) throw new Error('Không tìm thấy sản phẩm. Hãy tải lại dữ liệu.');
+      if (index >= 0 && next.products[index].updatedAt !== p.updatedAt) throw new Error('Sản phẩm đã được thay đổi. Hãy tải lại trước khi lưu.');
+      p.id = p.id || uid('sp'); p.updatedAt = new Date().toISOString();
+      if (index < 0) next.products.unshift(p); else next.products[index] = p;
+      return persistLocal(next);
+    },
+    async cloneProduct(id) {
+      if (remote) return gsCall('adminCloneProduct',id);
+      const next = latestLocalCatalog(), source = next.products.find(p=>p.id===id);
+      if (!source) throw new Error('Không tìm thấy sản phẩm.');
+      let suffix = 1, code;
+      do { code = source.code.slice(0,45) + '-COPY-' + suffix++; } while (next.products.some(p=>p.code.toLowerCase()===code.toLowerCase()));
+      next.products.unshift({...copy(source),id:uid('sp'),code,name:source.name.slice(0,185)+' (bản sao)',visible:false,status:'draft',archived:false,updatedAt:new Date().toISOString()});
+      return persistLocal(next);
+    },
+    async archiveProduct(id, archived) {
+      if (remote) return gsCall(archived ? 'adminArchiveProduct' : 'adminRestoreProduct',id);
+      const next = latestLocalCatalog(), p = next.products.find(item=>item.id===id);
+      if (!p) throw new Error('Không tìm thấy sản phẩm.');
+      p.archived = archived; p.visible = false; p.updatedAt = new Date().toISOString();
+      return persistLocal(next);
+    },
+    async saveSettings(settings) {
+      const validated = validateSettings(settings);
+      if (remote) return gsCall('adminSaveSettings',validated);
+      const next = latestLocalCatalog(); next.settings = validated; return persistLocal(next);
+    },
+    async savePrices(items) {
+      const validated = validatePrices(items);
+      if (remote) return gsCall('adminSavePriceFilters',validated);
+      const next = latestLocalCatalog(); next.priceFilters = validated; return persistLocal(next);
+    },
+    async importCatalog(catalog) {
+      const valid = normalizeCatalog(catalog);
+      if (remote) return gsCall('adminImportCatalog',valid);
+      return persistLocal(valid);
+    }
+  };
+  function acceptSnapshot(snapshot) {
+    if (!snapshot || !snapshot.catalog) throw new Error('Dữ liệu quản trị không hợp lệ.');
+    state.catalog = {...snapshot.catalog,products:snapshot.catalog.products.map(product=>({...product,images:productImages(product.images)}))};
+    state.meta = snapshot.meta || {};
+    state.loaded = true;
+    state.priceDraft = copy(state.catalog.priceFilters);
+    state.pricesDirty = false;
+    state.settingsDirty = false;
+    renderAll();
+  }
+  function previewUrl(url) {
+    try {
+      const checked = safeImageUrl(url);
+      if (!checked) return emptyImage;
+      if (remote && checked.startsWith('assets/')) return state.meta.publicSiteUrl ? new URL(checked,state.meta.publicSiteUrl.replace(/\/?$/,'/')).href : emptyImage;
+      return checked;
+    } catch (error) { return emptyImage; }
+  }
+  function renderMeta() {
+    $('#admin-email').textContent = state.meta.email || '';
+    $('#nav-count').textContent = state.catalog.products.filter(p=>!p.archived).length;
+    $('#mode-chip').classList.toggle('remote',remote);
+    $('#mode-chip').innerHTML = '<i></i>' + (remote ? 'Google Sheets' : 'Bản local');
+    if (remote) {
+      $('#mode-notice').innerHTML = '<span aria-hidden="true">✓</span><p>Dữ liệu được lưu vào Google Sheets. ' + (state.meta.cloudinaryConfigured ? 'Cloudinary đã kết nối.' : 'Chưa cấu hình Cloudinary; bạn vẫn có thể nhập URL ảnh HTTPS.') + '</p>';
+      if (state.meta.sheetUrl) { $('#open-sheet').href=state.meta.sheetUrl; $('#open-sheet').hidden=false; }
+      if (state.meta.publicSiteUrl) { $('#open-shop').href=state.meta.publicSiteUrl; $('#brand-home').href=state.meta.publicSiteUrl; } else { $('#open-shop').hidden=true; $('#brand-home').href='#'; }
+      $('#export-js').hidden=true;
+      $('#data-tools-help').textContent='Xuất bản sao JSON; nhập dữ liệu chỉ được dùng khi sheet sản phẩm đang trống.';
+    } else {
+      $('#mode-notice').innerHTML = '<span aria-hidden="true">ⓘ</span><p><strong>Chế độ local:</strong> thay đổi chỉ lưu trong trình duyệt này. Tải lại trang cửa hàng để xem. Muốn xuất bản thay đổi, xuất <strong>data.js</strong> rồi thay file trong dự án; hoặc dùng Admin Google Sheets.' + (config.adminUrl && /^https:\/\//.test(config.adminUrl) ? ' <a href="'+esc(config.adminUrl)+'" target="_blank" rel="noopener">Mở Admin Google Sheets ↗</a>' : '') + (config.apiUrl ? ' <strong>Cửa hàng đang cấu hình API; thay đổi local không ghi vào API.</strong>' : '') + '</p>';
+    }
+  }
+  function renderProducts() {
+    if (!state.loaded) return;
+    const active = state.catalog.products.filter(p=>!p.archived);
+    const publicCount = active.filter(p=>p.visible !== false && p.status !== 'draft').length;
+    $('#stat-total').textContent=active.length;
+    $('#stat-visible').textContent=publicCount;
+    $('#stat-hidden').textContent=active.length-publicCount;
+    const query=normalizeText(state.query);
+    const filtered=state.catalog.products.filter(p=>Boolean(p.archived)===state.archived && (!query || normalizeText([p.code,p.name,p.category].join(' ')).includes(query)));
+    const pages=Math.max(1,Math.ceil(filtered.length/state.pageSize));
+    state.page=Math.max(1,Math.min(state.page,pages));
+    const from=(state.page-1)*state.pageSize;
+    $('#product-rows').innerHTML=filtered.slice(from,from+state.pageSize).map(p=>{
+      const out=p.status==='out_of_stock' || p.stock===0;
+      const badge=p.archived ? ['hidden','Đã lưu trữ'] : p.status==='draft' ? ['draft','Bản nháp'] : p.visible===false ? ['hidden','Tạm ẩn'] : out ? ['out','Hết hàng'] : ['','Đang bán'];
+      return '<tr><td><div class="product-cell"><img class="product-thumb" src="'+esc(previewUrl(p.images && p.images[0]))+'" alt="" loading="lazy"><div><strong>'+esc(p.name)+'</strong><small>'+esc(p.code)+(p.featured?' · ★ Nổi bật':'')+'</small></div></div></td><td>'+esc(p.category || '—')+'</td><td class="product-price">'+esc(currency(p.price))+(p.originalPrice>p.price?'<span class="product-old-price">'+esc(currency(p.originalPrice))+'</span>':'')+'</td><td><span class="status-badge '+badge[0]+'">'+badge[1]+'</span></td><td class="date-cell">'+esc(dateLabel(p.updatedAt))+'</td><td><div class="row-actions">'+(p.archived?'<button class="icon-button" data-action="restore" data-id="'+esc(p.id)+'" title="Khôi phục (giữ tạm ẩn)" aria-label="Khôi phục '+esc(p.name)+'">↶</button>':'<button class="icon-button" data-action="edit" data-id="'+esc(p.id)+'" title="Chỉnh sửa" aria-label="Sửa '+esc(p.name)+'">✎</button><button class="icon-button" data-action="clone" data-id="'+esc(p.id)+'" title="Nhân bản" aria-label="Nhân bản '+esc(p.name)+'">⧉</button><button class="icon-button danger" data-action="archive" data-id="'+esc(p.id)+'" title="Lưu trữ" aria-label="Lưu trữ '+esc(p.name)+'">⌫</button>')+'</div></td></tr>';
+    }).join('');
+    $$('.product-thumb').forEach(img=>{img.addEventListener('error',()=>{img.src=emptyImage;},{once:true});});
+    $('#product-empty').hidden=filtered.length>0;
+    $('#product-result-count').textContent=filtered.length ? 'Hiển thị '+(from+1)+'–'+Math.min(from+state.pageSize,filtered.length)+' / '+filtered.length+' sản phẩm' : '0 sản phẩm';
+    const numbered=Array.from({length:pages},(_,i)=>i+1).filter(n=>n===1 || n===pages || Math.abs(n-state.page)<=1);
+    $('#admin-pagination').innerHTML='<button class="page-btn" data-page="'+(state.page-1)+'" '+(state.page===1?'disabled':'')+' aria-label="Trang trước">‹</button>'+numbered.map((n,i)=> (i>0&&n-numbered[i-1]>1?'<span aria-hidden="true">…</span>':'')+'<button class="page-btn '+(n===state.page?'current':'')+'" data-page="'+n+'" '+(n===state.page?'aria-current="page"':'')+'>'+n+'</button>').join('')+'<button class="page-btn" data-page="'+(state.page+1)+'" '+(state.page===pages?'disabled':'')+' aria-label="Trang sau">›</button>';
+    $('#category-options').innerHTML=[...new Set(active.map(p=>p.category).filter(Boolean))].sort().map(category=>'<option value="'+esc(category)+'"></option>').join('');
+  }
+  function renderSettings() {
+    const form=$('#settings-form'), settings=state.catalog.settings;
+    settingFields.forEach(key=>{form.elements.namedItem(key).value=settings[key] == null ? '' : settings[key];});
+    channelFields.forEach(key=>{form.elements.namedItem('channel_'+key).value=settings.channels && settings.channels[key] || '';});
+  }
+  function renderPrices() {
+    $('#price-rows').innerHTML=state.priceDraft.map((item,index)=>'<tr data-index="'+index+'"><td><input data-field="label" aria-label="Tên khoảng giá '+(index+1)+'" value="'+esc(item.label)+'" maxlength="100" required></td><td><input data-field="min" type="number" min="0" step="1" aria-label="Giá từ" value="'+esc(item.min)+'"></td><td><input data-field="max" type="number" min="0" step="1" aria-label="Giá đến" placeholder="Không giới hạn" value="'+esc(item.max)+'"></td><td><input data-field="sort" type="number" min="-10000" max="10000" step="1" aria-label="Thứ tự" value="'+esc(item.sort)+'"></td><td><input data-field="enabled" type="checkbox" aria-label="Hiển thị khoảng giá" '+(item.enabled!==false?'checked':'')+'></td><td><button class="icon-button danger" data-remove-price="'+index+'" aria-label="Xóa khoảng giá '+esc(item.label)+'" title="Xóa khoảng giá">×</button></td></tr>').join('');
+    $('#prices-empty').hidden=state.priceDraft.length>0;
+  }
+  function renderAll() { renderMeta();renderProducts();renderSettings();renderPrices(); }
+  async function setView(view) {
+    if (!['products','settings','prices'].includes(view) || view===state.view) return;
+    if ((state.view==='settings' && state.settingsDirty) || (state.view==='prices' && state.pricesDirty)) {
+      if (!await confirmAction('Bạn có thay đổi chưa lưu. Rời mục này và bỏ các thay đổi?','Rời mục')) return;
+      state.settingsDirty=false;state.pricesDirty=false;state.priceDraft=copy(state.catalog.priceFilters);renderSettings();renderPrices();
+    }
+    state.view=view;
+    $$('.view-panel').forEach(element=>{element.hidden=element.id!==view+'-view';});
+    $$('.nav-button').forEach(button=>button.classList.toggle('active',button.dataset.view===view));
+    $('#breadcrumb').textContent='/ '+({products:'Sản phẩm',settings:'Nội dung shop',prices:'Bộ lọc giá'}[view]);
+  }
+  function openProduct(id) {
+    state.draft=id ? copy(state.catalog.products.find(p=>p.id===id)) : {id:'',code:'',name:'',category:'',description:'',shortDescription:'',price:'',originalPrice:'',tags:[],featured:false,visible:true,status:'active',stock:null,images:[],updatedAt:'',archived:false};
+    if (!state.draft) return;
+    const form=$('#product-form');form.reset();
+    ['code','name','category','description','shortDescription','price','originalPrice','status','stock'].forEach(key=>{form.elements.namedItem(key).value=state.draft[key] == null ? '' : state.draft[key];});
+    form.elements.namedItem('tags').value=(state.draft.tags || []).join(', ');
+    form.elements.namedItem('featured').checked=state.draft.featured===true;
+    form.elements.namedItem('visible').checked=state.draft.visible!==false;
+    $('#product-dialog-title').textContent=id?'Chỉnh sửa sản phẩm':'Thêm sản phẩm';
+    $('#product-form-error').hidden=true;state.productDirty=false;renderImageSlots();
+    $('#product-dialog').showModal();
+    form.elements.namedItem('code').focus();
+  }
+  function renderImageSlots() {
+    $('#product-image-count').textContent=productImages(state.draft.images).length+'/'+maxProductImages+' ảnh · 1 ảnh đại diện + 3 ảnh phụ';
+    $('#image-slots').innerHTML=Array.from({length:maxProductImages},(_,i)=>{
+      const url=state.draft.images[i];
+      return '<div class="image-slot"><button class="image-slot-preview" type="button" data-image-slot="'+i+'" aria-label="Chọn '+(i===0?'ảnh đại diện':'ảnh phụ '+i)+'">'+(url?'<img src="'+esc(previewUrl(url))+'" alt="'+(i===0?'Ảnh đại diện':'Ảnh phụ '+i)+'">':'<span aria-hidden="true">＋</span>Chọn ảnh')+'</button>'+(url?'<button class="remove-image" type="button" data-remove-image="'+i+'" aria-label="Gỡ ảnh '+(i+1)+'">×</button>':'')+'<span class="image-slot-label">'+(i===0?'Ảnh đại diện':'Ảnh phụ '+i)+'</span><button class="image-url-button" type="button" data-image-url="'+i+'">Nhập URL</button></div>';
+    }).join('');
+  }
+  async function closeDialog(id) {
+    if (id==='crop-dialog' && $('#save-crop').disabled) { notify('Ảnh đang được xử lý, vui lòng chờ hoàn tất.');return; }
+    if (id==='product-dialog' && state.productDirty && !await confirmAction('Sản phẩm có thay đổi chưa lưu. Đóng và bỏ thay đổi?','Bỏ thay đổi')) return;
+    $("#"+id).close();
+    if (id==='product-dialog') { state.productDirty=false;state.draft=null; }
+    if (id==='crop-dialog') { releaseCrop(); }
+  }
+  async function saveProduct(event) {
+    event.preventDefault();
+    $('#product-form-error').hidden=true;
+    await withBusy($('#save-product'),async()=>{
+      try {
+        const form=$('#product-form'), values={...state.draft};
+        ['code','name','category','description','shortDescription','price','originalPrice','tags','status','stock'].forEach(key=>{values[key]=form.elements.namedItem(key).value;});
+        values.featured=form.elements.namedItem('featured').checked;values.visible=form.elements.namedItem('visible').checked;
+        const snapshot=await repository.saveProduct(values);
+        acceptSnapshot(snapshot);state.productDirty=false;state.draft=null;$('#product-dialog').close();notify('Đã lưu sản phẩm.');
+      } catch(error) { showError('#product-form-error',error); }
+    });
+  }
+  async function saveSettings(event) {
+    event.preventDefault();
+    const button=$('button[form="settings-form"]');
+    await withBusy(button,async()=>{
+      try {
+        const form=$('#settings-form'),settings={channels:{}};
+        settingFields.forEach(key=>{settings[key]=form.elements.namedItem(key).value;});
+        channelFields.forEach(key=>{settings.channels[key]=form.elements.namedItem('channel_'+key).value;});
+        acceptSnapshot(await repository.saveSettings(settings));notify('Đã cập nhật nội dung shop.');
+      } catch(error) { notify(error.message,true); }
+    });
+  }
+  async function rowAction(button) {
+    const {action,id}=button.dataset;
+    if (action==='edit') { openProduct(id);return; }
+    if (action==='archive' && !await confirmAction('Lưu trữ sản phẩm này? Sản phẩm sẽ được ẩn khỏi cửa hàng. Bạn có thể khôi phục trong mục “Đã lưu trữ”.','Lưu trữ')) return;
+    await withBusy(button,async()=>{
+      try { const snapshot=action==='clone'?await repository.cloneProduct(id):await repository.archiveProduct(id,action==='archive');acceptSnapshot(snapshot);notify(action==='clone'?'Đã nhân bản. Bản sao đang tạm ẩn và ở trạng thái nháp.':action==='archive'?'Đã lưu trữ sản phẩm.':'Đã khôi phục. Sản phẩm vẫn tạm ẩn để bạn kiểm tra.'); }
+      catch(error) { notify(error.message,true); }
+    },'…');
+  }
+  function startImage(target) {
+    pendingImageTarget=target;$('#image-file').value='';$('#image-file').click();
+  }
+  function imageFromBlob(blob) {
+    return new Promise((resolve,reject)=>{
+      const url=URL.createObjectURL(blob),img=new Image();
+      img.onload=()=>{URL.revokeObjectURL(url);resolve(img);};
+      img.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('Trình duyệt không giải mã được ảnh.'));};
+      img.src=url;
+    });
+  }
+  function loadHeicDecoder() {
+    if (window.heic2any) return Promise.resolve(window.heic2any);
+    if (decoderPromise) return decoderPromise;
+    decoderPromise=new Promise((resolve,reject)=>{
+      const script=document.createElement('script');
+      // Local package is pinned + vendored. Apps Script cannot serve local files, so uses the same pinned CDN version.
+      script.src=remote?'https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js':'assets/vendor/heic2any-0.0.4.min.js';
+      script.onload=()=>window.heic2any?resolve(window.heic2any):reject(new Error('Không khởi tạo được bộ giải mã HEIC.'));
+      script.onerror=()=>{decoderPromise=null;reject(new Error('Không tải được bộ giải mã HEIC. Kiểm tra Internet hoặc xuất ảnh sang JPEG trong Preview trên Mac.'));};
+      document.head.appendChild(script);
+    });
+    return decoderPromise;
+  }
+  async function receiveImage(file) {
+    if (!file || !pendingImageTarget) return;
+    if (file.size>25*1024*1024) { notify('Ảnh gốc vượt quá 25 MB. Vui lòng chọn ảnh nhỏ hơn.',true);return; }
+    const target={...pendingImageTarget};pendingImageTarget=null;
+    const heic=/\.(heic|heif)$/i.test(file.name) || /heic|heif/i.test(file.type);
+    try {
+      notify(heic?'Đang đọc ảnh HEIC/HEIF…':'Đang đọc ảnh…');
+      let img;
+      try { img=await imageFromBlob(file); }
+      catch(error) {
+        if (!heic) throw new Error('Không đọc được ảnh. Hãy chọn JPG, PNG, WebP, AVIF hoặc xuất ảnh thành JPEG bằng Preview trên Mac.');
+        const decoder=await loadHeicDecoder();
+        const result=await decoder({blob:file,toType:'image/jpeg',quality:0.95});
+        img=await imageFromBlob(Array.isArray(result)?result[0]:result);
+      }
+      if (!img.naturalWidth || !img.naturalHeight) throw new Error('Ảnh không có kích thước hợp lệ.');
+      crop={img,target,rotation:0,zoom:1,dx:0,dy:0,width:target.key==='heroImage'?1920:1200,height:target.key==='heroImage'?1080:1200,pointer:null};
+      const canvas=$('#crop-canvas');canvas.width=crop.width;canvas.height=crop.height;
+      $('#crop-zoom').value='1';$('#crop-error').hidden=true;
+      $('#crop-info').textContent='Ảnh xuất: '+crop.width+' × '+crop.height+' px, JPEG. '+(!remote?'Ảnh được lưu tại trình duyệt.':'Ảnh được tải lên Cloudinary sau khi bạn xác nhận.');
+      renderCrop();$('#crop-dialog').showModal();
+    } catch(error) { notify(heic?'Không chuyển được ảnh HEIC/HEIF này. Hãy mở ảnh bằng Preview → File → Export → JPEG rồi chọn lại. '+error.message:error.message,true); }
+  }
+  function cropGeometry() {
+    const rotated=Math.abs(crop.rotation%180)===90;
+    const w=rotated?crop.img.naturalHeight:crop.img.naturalWidth;
+    const h=rotated?crop.img.naturalWidth:crop.img.naturalHeight;
+    const scale=Math.max(crop.width/w,crop.height/h)*crop.zoom;
+    const limitX=Math.max(0,(w*scale-crop.width)/2),limitY=Math.max(0,(h*scale-crop.height)/2);
+    crop.dx=Math.min(limitX,Math.max(-limitX,crop.dx));crop.dy=Math.min(limitY,Math.max(-limitY,crop.dy));
+    return {scale};
+  }
+  function renderCrop() {
+    if (!crop) return;
+    const canvas=$('#crop-canvas'),ctx=canvas.getContext('2d');
+    const geometry=cropGeometry();
+    ctx.clearRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#ffffff';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.save();ctx.translate(canvas.width/2+crop.dx,canvas.height/2+crop.dy);ctx.rotate(crop.rotation*Math.PI/180);ctx.scale(geometry.scale,geometry.scale);ctx.drawImage(crop.img,-crop.img.naturalWidth/2,-crop.img.naturalHeight/2);ctx.restore();
+  }
+  function releaseCrop() { crop=null;$('#crop-canvas').getContext('2d').clearRect(0,0,$('#crop-canvas').width,$('#crop-canvas').height); }
+  function blobDataUrl(blob) { return new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result));reader.onerror=()=>reject(new Error('Không đọc được ảnh đã cắt.'));reader.readAsDataURL(blob);}); }
+  async function uploadImage(blob,target) {
+    if (!remote) return blobDataUrl(blob);
+    const signed=await gsCall('adminUploadSignature',target.type==='product'?'product':target.key==='logo'?'logo':'hero');
+    const body=new FormData();
+    Object.keys(signed.params).forEach(key=>body.append(key,String(signed.params[key])));
+    body.append('file',blob,'webshop-image.jpg');body.append('api_key',signed.apiKey);body.append('signature',signed.signature);
+    const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),90000);
+    try {
+      const response=await fetch('https://api.cloudinary.com/v1_1/'+encodeURIComponent(signed.cloudName)+'/image/upload',{method:'POST',body,signal:controller.signal});
+      const result=await response.json();
+      if (!response.ok || !result.secure_url) throw new Error(result.error && result.error.message || 'Cloudinary không nhận ảnh.');
+      return safeImageUrl(result.secure_url);
+    } catch(error) { if(error.name==='AbortError')throw new Error('Tải ảnh quá 90 giây. Kiểm tra kết nối và thử lại.');throw error; }
+    finally { clearTimeout(timeout); }
+  }
+  async function saveCrop() {
+    if (!crop) return;
+    await withBusy($('#save-crop'),async()=>{
+      try {
+        $('#crop-error').hidden=true;
+        const target={...crop.target};
+        const blob=await new Promise(resolve=>$('#crop-canvas').toBlob(resolve,'image/jpeg',remote?0.9:0.8));
+        if (!blob) throw new Error('Không xuất được ảnh.');
+        const url=await uploadImage(blob,target);
+        if (target.type==='product') { if(!state.draft)throw new Error('Hộp sản phẩm đã đóng.');state.draft.images[target.index]=url;state.productDirty=true;renderImageSlots(); }
+        else { $('#settings-form').elements.namedItem(target.key).value=url;state.settingsDirty=true; }
+        $('#crop-dialog').close();releaseCrop();notify(remote?'Đã tải ảnh. Hãy lưu sản phẩm/nội dung để áp dụng.':'Đã chọn ảnh. Hãy lưu sản phẩm/nội dung để áp dụng.');
+      } catch(error) { showError('#crop-error',error); }
+    },remote?'Đang tải ảnh…':'Đang xử lý…');
+  }
+  function download(name,content,type) {
+    const url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');
+    a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),5000);
+  }
+  function publicCatalog() {
+    const exported=copy(state.catalog);
+    exported.products=exported.products.filter(p=>!p.archived && p.visible!==false && p.status!=='draft');
+    exported.priceFilters=exported.priceFilters.filter(p=>p.enabled!==false);
+    return exported;
+  }
+  async function importFile(file) {
+    if (!file)return;
+    try {
+      if(file.size>15*1024*1024)throw new Error('File JSON vượt quá 15 MB.');
+      const parsed=JSON.parse(await file.text());
+      const valid=normalizeCatalog(parsed);
+      if(remote && state.catalog.products.length)throw new Error('Nhập dữ liệu trên Admin Google Sheets chỉ dành cho khởi tạo khi sheet Products đang trống. Dữ liệu hiện có được giữ nguyên.');
+      if(!await confirmAction(remote?'Nhập '+valid.products.length+' sản phẩm cùng nội dung shop và bộ lọc vào Google Sheets?':'Thay toàn bộ dữ liệu local bằng '+valid.products.length+' sản phẩm trong file? Hãy xuất bản sao JSON trước nếu cần.','Nhập dữ liệu'))return;
+      acceptSnapshot(await repository.importCatalog(valid));state.page=1;renderProducts();notify('Đã nhập dữ liệu.');
+    }catch(error){notify(error.message,true);}
+  }
+  function bindEvents() {
+    $$('.nav-button').forEach(button=>button.addEventListener('click',()=>setView(button.dataset.view)));
+    $('#add-product').addEventListener('click',()=>{if(state.loaded)openProduct();});
+    $('#product-search').addEventListener('input',event=>{state.query=event.target.value;state.page=1;renderProducts();});
+    $('#show-archived').addEventListener('change',event=>{state.archived=event.target.checked;state.page=1;renderProducts();});
+    $('#admin-pagination').addEventListener('click',event=>{const button=event.target.closest('[data-page]');if(button){state.page=Number(button.dataset.page);renderProducts();}});
+    $('#product-rows').addEventListener('click',event=>{const button=event.target.closest('[data-action]');if(button)rowAction(button);});
+    $('#reload-data').addEventListener('click',()=>withBusy($('#reload-data'),async()=>{try{acceptSnapshot(await repository.load());notify('Đã tải lại dữ liệu.');}catch(error){notify(error.message,true);}},'Đang tải…'));
+    $('#product-form').addEventListener('submit',saveProduct);
+    $('#product-form').addEventListener('input',()=>{state.productDirty=true;});
+    $('#settings-form').addEventListener('submit',saveSettings);
+    $('#settings-form').addEventListener('input',()=>{state.settingsDirty=true;});
+    $$('[data-close-dialog]').forEach(button=>button.addEventListener('click',()=>closeDialog(button.dataset.closeDialog)));
+    $('#product-dialog').addEventListener('cancel',event=>{event.preventDefault();closeDialog('product-dialog');});
+    $('#crop-dialog').addEventListener('cancel',event=>{event.preventDefault();closeDialog('crop-dialog');});
+    $('#confirm-dialog').addEventListener('cancel',event=>{event.preventDefault();finishConfirm(false);});
+    $('#confirm-cancel').addEventListener('click',()=>finishConfirm(false));$('#confirm-ok').addEventListener('click',()=>finishConfirm(true));
+    $('#image-slots').addEventListener('click',event=>{
+      const choose=event.target.closest('[data-image-slot]'),remove=event.target.closest('[data-remove-image]'),urlButton=event.target.closest('[data-image-url]');
+      if(choose)startImage({type:'product',index:Number(choose.dataset.imageSlot)});
+      if(remove){state.draft.images[Number(remove.dataset.removeImage)]='';state.productDirty=true;renderImageSlots();}
+      if(urlButton){const index=Number(urlButton.dataset.imageUrl),url=window.prompt('Nhập URL ảnh HTTPS hoặc đường dẫn assets/ trong dự án:',state.draft.images[index] || '');if(url!==null){try{state.draft.images[index]=safeImageUrl(url);state.productDirty=true;renderImageSlots();}catch(error){notify(error.message,true);}}}
+    });
+    $$('[data-settings-image]').forEach(button=>button.addEventListener('click',()=>startImage({type:'settings',key:button.dataset.settingsImage})));
+    $('#image-file').addEventListener('change',event=>receiveImage(event.target.files[0]));
+    $('#crop-zoom').addEventListener('input',event=>{if(crop){crop.zoom=Number(event.target.value);renderCrop();}});
+    $('#rotate-left').addEventListener('click',()=>{if(crop){crop.rotation=(crop.rotation-90)%360;crop.dx=0;crop.dy=0;renderCrop();}});
+    $('#rotate-right').addEventListener('click',()=>{if(crop){crop.rotation=(crop.rotation+90)%360;crop.dx=0;crop.dy=0;renderCrop();}});
+    $('#reset-crop').addEventListener('click',()=>{if(crop){Object.assign(crop,{rotation:0,zoom:1,dx:0,dy:0});$('#crop-zoom').value='1';renderCrop();}});
+    const canvas=$('#crop-canvas');
+    canvas.addEventListener('pointerdown',event=>{if(!crop)return;crop.pointer={id:event.pointerId,x:event.clientX,y:event.clientY,dx:crop.dx,dy:crop.dy};canvas.setPointerCapture(event.pointerId);});
+    canvas.addEventListener('pointermove',event=>{if(!crop || !crop.pointer || crop.pointer.id!==event.pointerId)return;const rect=canvas.getBoundingClientRect();crop.dx=crop.pointer.dx+(event.clientX-crop.pointer.x)*canvas.width/rect.width;crop.dy=crop.pointer.dy+(event.clientY-crop.pointer.y)*canvas.height/rect.height;renderCrop();});
+    function stopDrag(){if(crop)crop.pointer=null;}
+    canvas.addEventListener('pointerup',stopDrag);canvas.addEventListener('pointercancel',stopDrag);canvas.addEventListener('lostpointercapture',stopDrag);
+    $('#save-crop').addEventListener('click',saveCrop);
+    $('#add-price').addEventListener('click',()=>{if(!state.loaded)return;state.priceDraft.push({id:uid('gia'),label:'',min:0,max:null,sort:state.priceDraft.length+1,enabled:true});state.pricesDirty=true;renderPrices();$('#price-rows tr:last-child input').focus();});
+    $('#price-rows').addEventListener('input',event=>{const input=event.target.closest('[data-field]');if(!input)return;const row=input.closest('[data-index]');state.priceDraft[Number(row.dataset.index)][input.dataset.field]=input.type==='checkbox'?input.checked:input.value;state.pricesDirty=true;});
+    $('#price-rows').addEventListener('click',async event=>{const button=event.target.closest('[data-remove-price]');if(!button)return;const index=Number(button.dataset.removePrice);if(await confirmAction('Xóa khoảng giá “'+(state.priceDraft[index].label || 'chưa đặt tên')+'”? Thay đổi có hiệu lực sau khi bấm Lưu bộ lọc giá.','Xóa khoảng giá')){state.priceDraft.splice(index,1);state.pricesDirty=true;renderPrices();}});
+    $('#save-prices').addEventListener('click',()=>withBusy($('#save-prices'),async()=>{try{acceptSnapshot(await repository.savePrices(state.priceDraft));notify('Đã lưu bộ lọc giá.');}catch(error){notify(error.message,true);}}));
+    $('#export-json').addEventListener('click',()=>{if(state.loaded)download('webshop100-backup-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(state.catalog,null,2),'application/json');});
+    $('#export-js').addEventListener('click',()=>{if(state.loaded){download('data.js','/* Public storefront catalog. Exported '+new Date().toISOString()+'. */\nwindow.SHOP_DATA = '+JSON.stringify(publicCatalog(),null,2)+';\n','text/javascript');notify('Đã xuất data.js. Thay assets/js/data.js trong dự án rồi đưa lên GitHub.');}});
+    $('#import-json').addEventListener('click',()=>{if(state.loaded){$('#import-file').value='';$('#import-file').click();}});
+    $('#import-file').addEventListener('change',event=>importFile(event.target.files[0]));
+    window.addEventListener('beforeunload',event=>{if(state.productDirty || state.settingsDirty || state.pricesDirty){event.preventDefault();event.returnValue='';}});
+    window.addEventListener('storage',event=>{if(!remote && event.key===dataKey)notify('Dữ liệu đã thay đổi ở tab khác. Bấm Tải lại để lấy bản mới nhất.');});
+  }
+  async function init() {
+    bindEvents();
+    try { acceptSnapshot(await repository.load()); }
+    catch(error) { showError('#fatal-error',error);$('#mode-notice').hidden=true;$('#product-result-count').textContent='Không tải được dữ liệu'; }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+}());
+
+</script>
+</body>
+</html>

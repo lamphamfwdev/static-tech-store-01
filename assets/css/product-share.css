@@ -1,0 +1,11 @@
+/* Liên kết sản phẩm dùng cùng bảng màu và bố cục chi tiết hiện có. */
+.detail-share{border-top:1px solid var(--border);margin-top:19px;padding-top:15px}
+.detail-share .button{min-height:44px;font-size:12px;gap:8px;white-space:normal;text-align:left}
+.detail-share .button .icon{width:18px;height:18px}
+.share-status{font-size:11px;line-height:1.6;color:#68645e;margin:9px 0 0;overflow-wrap:anywhere}
+.share-status:empty{display:none}
+.share-link-fallback{margin-top:12px}
+.share-link-fallback label{display:block;font-size:11px;font-weight:650;margin-bottom:6px}
+.share-link-fallback input{width:100%;min-width:0;min-height:43px;padding:10px 11px;border:1px solid var(--border);border-radius:8px;background:#fffdf8;color:var(--ink);font-size:12px}
+.share-link-fallback p{font-size:11px;line-height:1.5;color:#68645e;margin:7px 0 0}
+@media(max-width:760px){.detail-share .button{width:100%;justify-content:center}.share-link-fallback input{font-size:16px}}
